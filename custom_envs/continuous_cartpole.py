@@ -9,8 +9,13 @@ from gymnasium import logger
 class ContinuousCartPoleEnv(CartPoleEnv):
     """
     Gymnasium CartPole environment with a continuous action space.
-    The action space is a direct mapping to the force applied on the
-    cart, hence the action here is measured in Newtons.
+
+    The magnitude of action represents the amount of force (in Newtons)
+    applied on the cart.
+
+    The sign of action indicates the direction in which the force vector points.
+    Positive sign means the force vector points to the right.
+    Negative sign means the force vector points to the left.
     """
 
     def __init__(
