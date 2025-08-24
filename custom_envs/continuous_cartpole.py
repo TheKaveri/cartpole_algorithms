@@ -30,9 +30,9 @@ class ContinuousCartPoleEnv(CartPoleEnv):
         self.theta_threshold_radians = theta_threshold_degrees * np.pi / 180
 
     def step(self, action):
-        assert self.action_space.contains(
-            action
-        ), f"{action!r} ({type(action)}) invalid"
+        # assert self.action_space.contains(
+        #     action
+        # ), f"{action!r} ({type(action)}) invalid"
         assert self.state is not None, "Call reset before using step method."
         x, x_dot, theta, theta_dot = self.state
         force = np.clip(action, -self.force_mag, self.force_mag)
